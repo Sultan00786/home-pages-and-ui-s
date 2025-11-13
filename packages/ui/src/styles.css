@@ -16,6 +16,6 @@
 
 @layer components {
   .heading-58 {
-    @apply text-[58px] leading-[105%] tracking-[1] font-semibold;
+    @apply text-[58px] leading-[105%];
   }
 }
