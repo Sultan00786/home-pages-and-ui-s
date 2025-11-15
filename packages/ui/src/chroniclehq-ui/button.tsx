@@ -23,15 +23,15 @@ export function HomeButton({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.2,
-        delay: 0.1,
+        duration: 0.24,
+        delay: 0.05,
       },
     },
     hover: {
       opacity: 0,
-      y: -10,
+      y: -15,
       transition: {
-        duration: 0.2,
+        duration: 0.24,
       },
     },
   };
@@ -39,17 +39,17 @@ export function HomeButton({
   const textBottomVariants: Variants = {
     rest: {
       opacity: 0,
-      y: 10,
+      y: 15,
       transition: {
-        duration: 0.2,
+        duration: 0.24,
       },
     },
     hover: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.2,
-        delay: 0.1,
+        duration: 0.24,
+        delay: 0.05,
       },
     },
   };
@@ -60,9 +60,9 @@ export function HomeButton({
       animate="rest"
       variants={buttonVariants}
       className={cn(
-        "h-12 w-fit px-7 rounded-[1] flex items-center cursor-pointer relative overflow-hidden roobert-16",
+        "h-12 w-fit px-7 rounded-[1] flex items-center cursor-pointer relative overflow-hidden roobert-16 font-semibold",
         variant === "primary"
-          ? "bg-white text-black-950"
+          ? "bg-white text-black"
           : "bg-black-950 text-white border border-white inset shadow-sm",
         className
       )}
@@ -72,20 +72,12 @@ export function HomeButton({
       <div className="opacity-0">{children}</div>
       <motion.div
         variants={textTopVariants}
-        transition={{
-          duration: 0.3,
-          delay: isHovered ? 0 : 0.1,
-        }}
         className="absolute inset-0 flex items-center justify-center"
       >
         {children}
       </motion.div>
       <motion.div
         variants={textBottomVariants}
-        transition={{
-          duration: 0.3,
-          delay: isHovered ? 0.1 : 0,
-        }}
         className="absolute inset-0 flex items-center justify-center"
       >
         {children}
