@@ -60,7 +60,7 @@ export function HomeButton({
       animate="rest"
       variants={buttonVariants}
       className={cn(
-        "h-12 w-fit px-7 rounded-[1] flex items-center cursor-pointer relative overflow-hidden",
+        "h-12 w-fit px-7 rounded-[1] flex items-center cursor-pointer relative overflow-hidden roobert-16",
         variant === "primary"
           ? "bg-white text-black-950"
           : "bg-black-950 text-white border border-white inset shadow-sm",
