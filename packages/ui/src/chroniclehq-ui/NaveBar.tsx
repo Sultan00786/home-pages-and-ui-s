@@ -1,3 +1,5 @@
+"use client";
+import { motion, MotionValue, useMotionTemplate } from "motion/react";
 import { cn } from "../cn";
 import { HomeButton } from "./button";
 import Logo from "./Logo";
@@ -9,13 +11,33 @@ const navItems = [
   "Solutions",
   "Resources",
 ];
-export default function NaveBar() {
+export default function NaveBar({
+  mouseX,
+  mouseY,
+}: {
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
+}) {
   return (
-    <div className="w-full h-[54px] fixed top-0 left-0 flex items-center justify-between ">
-      <div className="h-full w-full flex items-center justify-between relative pl-10 ">
-        <NaveItems />
-        <AuthButtons />
-        <Logo className="absolute inset-0 m-auto cursor-pointer" />
+    <div className="w-full h-[54px] fixed top-0 left-0">
+      <div className=" bg-black-950/60 backdrop-blur-[100] w-full h-full relative border-b-[0.5px] border-black-100/20">
+        <div className="h-full w-full flex items-center justify-between relative pl-6 ">
+          <NaveItems />
+          <AuthButtons />
+          <Logo className="absolute inset-0 m-auto cursor-pointer" />
+        </div>
+        <motion.div
+          className="h-[0.5px] w-full absolute bottom-0"
+          style={{
+            background: useMotionTemplate`
+            radial-gradient(
+              180px circle at ${mouseX}px ${mouseY}px,
+              rgba(255, 255, 255, 1),
+              rgba(255, 255, 255, 0.05)
+            )
+          `,
+          }}
+        ></motion.div>
       </div>
     </div>
   );
