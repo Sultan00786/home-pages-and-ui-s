@@ -5,7 +5,6 @@ import "./globals.css";
 const roobert = localFont({
   src: "./fonts/RoobertTRIALVF.ttf",
   variable: "--font-roobert",
-  weight: "500",
 });
 
 export const metadata: Metadata = {
