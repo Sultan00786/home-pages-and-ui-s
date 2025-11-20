@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { MouseEventHandler, ReactNode, useState } from "react";
 import { cn } from "../cn";
 import { motion, Variants } from "motion/react";
 import "../styles.css";
@@ -7,10 +7,12 @@ export function HomeButton({
   children,
   variant = "primary",
   className,
+  onClick,
 }: {
   children: ReactNode;
   variant: "primary" | "secondary";
   className?: string;
+  onClick?: MouseEventHandler<HTMLElement> | undefined;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const buttonVariants = {
@@ -68,6 +70,7 @@ export function HomeButton({
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
       <div className="opacity-0">{children}</div>
       <motion.div
