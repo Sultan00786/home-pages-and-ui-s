@@ -14,7 +14,7 @@
   --color-black-900: #3d3d3d;
   --color-black-950: #000000;
 
-  --breakpoint-lg: 1136px;
+  --breakpoint-lg-panelSlide: 1284px;
 }
 
 @layer components {

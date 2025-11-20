@@ -19,8 +19,8 @@ export default function NaveBar({
   mouseY: MotionValue<number>;
 }) {
   return (
-    <div className="w-full h-[54px] fixed top-0 left-0">
-      <div className=" bg-black-950/60 backdrop-blur-[100] w-full h-full relative border-b-[0.5px] border-black-100/20">
+    <div className="w-full h-[54px] fixed top-0 left-0 z-50">
+      <div className=" bg-black-950/60 backdrop-blur-[100px] w-full h-full relative border-b-[0.5px] border-black-100/20">
         <div className="h-full w-full flex items-center justify-between relative pl-6 ">
           <NaveItems />
           <AuthButtons />
@@ -32,7 +32,7 @@ export default function NaveBar({
             background: useMotionTemplate`
             radial-gradient(
               180px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 255, 255, 1),
+              rgba(255, 255, 255),
               rgba(255, 255, 255, 0.05)
             )
           `,
