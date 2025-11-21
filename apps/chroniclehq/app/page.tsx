@@ -13,7 +13,6 @@ const slides = [
   "/assets/slide6.webp",
   "/assets/slide7.webp",
   "/assets/slide8.jpg",
-  "/assets/ui-toolbar.png",
 ];
 export default function Home() {
   const mouseX = useMotionValue(0);
