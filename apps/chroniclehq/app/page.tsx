@@ -2,8 +2,6 @@
 import { NaveBar, PanelSlide } from "@repo/ui/chroniclehq";
 import { useMotionValue } from "motion/react";
 import { MouseEvent } from "react";
-import slide1 from "../public/assets/ui-toolbar.png";
-import Image from "next/image";
 const slides = [
   "/assets/slide1.webp",
   "/assets/slide2.webp",
