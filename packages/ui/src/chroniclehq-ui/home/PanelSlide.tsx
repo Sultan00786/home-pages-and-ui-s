@@ -58,8 +58,8 @@ function PanelSlide({ slideImgs, uiToolbar }: PanelSlidePros) {
     return () => clearInterval(interval);
   }, [currentSlide, slideImgs.length]);
   return (
-    <div className="w-fit h-full flex flex-col items-center">
-      <div className="lg-panelSlide:w-[1192px] w-full h-full lg-panelSlide:h-[728px] bg-black-500/10  relative rounded-[0.8rem] border-4 border-black-900/10 overflow-hidden">
+    <div className="lg-panelSlide:w-[1192px] w-full h-full flex flex-col items-center">
+      <div className=" w-full h-full lg-panelSlide:h-[728px] bg-black-500/10  relative rounded-[0.8rem] border-4 border-black-900/10 overflow-hidden">
         <div className="w-full h-full absolute inset-0 z-0 flex-col gap-y-[60px] justify-center">
           {currentSlide !== null && currentSlide !== undefined && (
             <div className="w-full h-full absolute px-8 sm:px-12 md:px-[70px] flex items-center justify-center ">
@@ -72,12 +72,12 @@ function PanelSlide({ slideImgs, uiToolbar }: PanelSlidePros) {
                 src={slideImgs[currentSlide]}
                 alt={`slide-${currentSlide + 1}`}
                 key={`current-slide-${currentSlide + 1}`}
-                className="w-full rounded-[calc(0.8rem-4px)] lg-panelSlide:m-auto my-auto"
+                className="min-w-0 rounded-[calc(0.8rem-4px)] lg-panelSlide:m-auto my-auto"
               />
             </div>
           )}
           {previousSlide !== null && previousSlide !== undefined && (
-            <div className="w-full h-full absolute lg-panelSlide:px-[70px] px-[50px] flex items-center justify-center ">
+            <div className="w-full h-full absolute px-8 sm:px-12 md:px-[70px] flex items-center justify-center ">
               <motion.img
                 initial={previousSlide === null ? false : { translateY: 0 }}
                 animate={previousSlide === null ? false : animationState}
@@ -120,27 +120,29 @@ function SlideTabes({
   setCurrentSlide,
 }: SideTabesProps) {
   return (
-    <div className="w-full py-4 flex gap-0.5 items-center justify-center overflow-x-auto">
-      {slideImgs.map((_, index) => (
-        <div
-          key={`slide-tab-${index + 1}`}
-          className={cn(
-            "cursor-pointer py-1.5 px-3 roobert-16 hover:text-white transition-all duration-300 rounded-lg whitespace-nowrap",
-            index === currentSlide
-              ? "text-white delay-300"
-              : "text-black-400 delay-300"
-          )}
-          onClick={() => {
-            if (index === currentSlide) return;
-            if (index > currentSlide) setAnimationState("nextSlide");
-            else setAnimationState("prevSlid");
-            setPreviousSlide(currentSlide);
-            setCurrentSlide(index);
-          }}
-        >
-          slide {index + 1}
-        </div>
-      ))}
+    <div className=" w-full md:h-20 h-16` md:my-5 my-1 relative sm:overflow-hidden overflow-x-scroll overflow-y-hidden">
+      <div className="py-4 flex gap-6 items-center justify-center absolute left-0 sm:inset-0 z-30">
+        {slideImgs.map((_, index) => (
+          <div
+            key={`slide-tab-${index + 1}`}
+            className={cn(
+              "cursor-pointer py-1.5 roobert-16 hover:text-white transition-all duration-300 rounded-lg whitespace-nowrap",
+              index === currentSlide
+                ? "text-white delay-300"
+                : "text-black-400 delay-300"
+            )}
+            onClick={() => {
+              if (index === currentSlide) return;
+              if (index > currentSlide) setAnimationState("nextSlide");
+              else setAnimationState("prevSlid");
+              setPreviousSlide(currentSlide);
+              setCurrentSlide(index);
+            }}
+          >
+            slide {index + 1}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
