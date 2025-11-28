@@ -1,5 +1,9 @@
 "use client";
-import { NaveBar, PanelSlide } from "@repo/ui/chroniclehq";
+import {
+  NaveBar,
+  PanelSlide,
+  ScrollPopUpComponent,
+} from "@repo/ui/chroniclehq";
 import { useMotionValue } from "motion/react";
 import { MouseEvent } from "react";
 const slides = [
@@ -33,6 +37,9 @@ function HomeLayout() {
     <div className="my-24 w-full h-full flex flex-col items-center px-[30px]">
       <div className=""></div>
       <PanelSlide slideImgs={slides} uiToolbar="/assets/ui-toolbar.png" />
+      <div className="h-64 w-full mt-[300px] flex flex-col items-center">
+        <ScrollPopUpComponent />
+      </div>
     </div>
   );
 }

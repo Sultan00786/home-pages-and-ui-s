@@ -3,6 +3,7 @@ import { MouseEventHandler, ReactNode, useState } from "react";
 import { cn } from "../cn";
 import { motion, Variants } from "motion/react";
 import "../styles.css";
+
 export function HomeButton({
   children,
   variant = "primary",
@@ -14,14 +15,13 @@ export function HomeButton({
   className?: string;
   onClick?: MouseEventHandler<HTMLElement> | undefined;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
   const buttonVariants = {
     rest: {},
     hover: {},
   };
 
   const textTopVariants: Variants = {
-    rest: {
+    "not-hover": {
       opacity: 1,
       y: 0,
       transition: {
@@ -39,7 +39,7 @@ export function HomeButton({
   };
 
   const textBottomVariants: Variants = {
-    rest: {
+    "not-hover": {
       opacity: 0,
       y: 15,
       transition: {
@@ -57,9 +57,9 @@ export function HomeButton({
   };
   return (
     <motion.button
-      initial="rest"
+      initial="not-hover"
       whileHover="hover"
-      animate="rest"
+      // animate="rest"
       variants={buttonVariants}
       className={cn(
         "h-12 w-fit px-7 rounded-[1] flex items-center cursor-pointer relative overflow-hidden roobert-16 font-semibold",
@@ -68,8 +68,6 @@ export function HomeButton({
           : "bg-black-950 text-white border border-white inset shadow-sm",
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
     >
       <div className="opacity-0">{children}</div>
