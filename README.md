@@ -1,135 +1,115 @@
-# Turborepo starter
+# Chronicle HQ - Homes Illustration
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern, animated web application built with Next.js 16, React 19, and Framer Motion. This project showcases smooth slide animations, interactive UI components, and a beautiful design system.
 
-## Using this example
+## 🚀 Features
 
-Run the following command:
+- **Smooth Slide Animations** - Auto-playing carousel with vertical transitions using Framer Motion
+- **Interactive Navigation** - Mouse-tracking gradient effects on navbar
+- **Scroll-Triggered Animations** - Components that animate into view as you scroll
+- **Modern Design System** - Custom Tailwind CSS theme with glassmorphism effects
+- **Type-Safe** - 100% TypeScript throughout the codebase
+- **Monorepo Architecture** - Organized with Turborepo for optimal development experience
 
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
+## 📦 What's inside?
 
 This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `chroniclehq`: a [Next.js](https://nextjs.org/) app showcasing animated UI components (runs on port 3001)
+- `@repo/ui`: a React component library with reusable Chronicle HQ components
+- `@repo/eslint-config`: shared `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/typescript-config`: shared `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+## 🛠️ Tech Stack
 
-This Turborepo has some additional tools already setup for you:
+- **Framework**: [Next.js 16](https://nextjs.org/) with App Router
+- **UI Library**: [React 19](https://react.dev/)
+- **Animation**: [Framer Motion](https://motion.dev/) (motion package)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Type Safety**: [TypeScript 5.9](https://www.typescriptlang.org/)
+- **Code Quality**: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io)
+- **Monorepo**: [Turborepo](https://turborepo.com/)
+- **Package Manager**: [pnpm 9](https://pnpm.io/)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- pnpm 9.0.0 (recommended) or npm/yarn
+
+### Installation
+
+```bash
+# Install dependencies
+pnpm install
+```
+
+### Development
+
+Start the development server:
+
+```bash
+# Run all apps
+pnpm dev
+
+# Run only Chronicle HQ app (recommended)
+pnpm dev --filter=chroniclehq
+```
+
+The Chronicle HQ app will be available at [http://localhost:3001](http://localhost:3001)
 
 ### Build
 
-To build all apps and packages, run the following command:
+Build all apps and packages:
 
-```
-cd my-turborepo
+```bash
+# Build everything
+pnpm build
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Build only Chronicle HQ app
+pnpm build --filter=chroniclehq
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 🎨 Design System
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+### Custom Tailwind Theme
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+- **Colors**: Custom black scale from `black-50` to `black-950`
+- **Fonts**: Roobert with variable font weights (300-900)
+- **Breakpoints**: Custom `lg-panelSlide` breakpoint at 1284px
+- **Effects**: Glassmorphism, gradients, backdrop filters
 
-### Develop
+### Animation Patterns
 
-To develop all apps and packages, run the following command:
+- **Slide Transitions**: Vertical enter/exit animations with easing
+- **Mouse Tracking**: Gradient borders that follow cursor movement
+- **Scroll Triggers**: Components animate into view on scroll
+- **Staggered Animations**: Sequential reveal effects
 
-```
-cd my-turborepo
+## 📚 Learning Resources
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+### Framer Motion Tutorials
+- [Creating Slide Animations with Framer Motion](./tmp_rovodev_slide_animation_blog.md) - Beginner's guide based on the PanelSlide component
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+### Framework Documentation
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Framer Motion Documentation](https://motion.dev/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Turborepo Documentation](https://turborepo.com/docs)
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 🤝 Contributing
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
