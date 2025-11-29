@@ -76,7 +76,7 @@ function ScrollPopUpComponent() {
         [
           "button",
           {
-            scale: [1, 0.9, 1],
+            scale: [1, 0.85, 1],
           },
           {
             duration: 0.3,
