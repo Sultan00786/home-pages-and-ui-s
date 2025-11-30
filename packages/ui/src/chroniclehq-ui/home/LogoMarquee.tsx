@@ -2,14 +2,14 @@ import { motion } from "motion/react";
 
 function LogoMarquee({ brands }: { brands: string[] }) {
   return (
-    <div className="relative h-[90px] w-[940px] flex flex-col items-center justify-between py-5 overflow-hidden">
+    <div className="relative h-[90px] w-[940px] flex items-center justify-between py-5 overflow-hidden">
       <div className="absolute top-0 left-0 w-px h-full bg-black-950 shadow-[0px_0px_100px_150px_#000000] z-10" />
 
       <motion.div
         style={{ translateX: 0 }}
         animate={{ translateX: -1940 }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        className="w-full h-full flex items-center gap-13"
+        transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
+        className="w-full h-full flex items-center gap-14"
       >
         {brands.map((logo, index) => (
           <img key={index} src={logo} alt="brand" className="h-[50px]" />

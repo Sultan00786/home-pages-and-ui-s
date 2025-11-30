@@ -4,6 +4,7 @@ import {
   NaveBar,
   PanelSlide,
   ScrollPopUpComponent,
+  TestimonialSlider,
 } from "@repo/ui/chroniclehq";
 import { useMotionValue } from "motion/react";
 import { MouseEvent } from "react";
@@ -48,8 +49,8 @@ function HomeLayout() {
   return (
     <div className="my-24 w-full h-full flex flex-col items-center px-[30px]">
       <PanelSlide slideImgs={slides} uiToolbar="/assets/ui-toolbar.png" />
-      <div className="h-64 w-full mt-[300px] flex flex-col items-center">
-        <LogoMarquee brands={logos} />
+      <div className="h-[600px] w-full mt-[300px] flex flex-col items-center">
+        <TestimonialSlider />
       </div>
     </div>
   );
