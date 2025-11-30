@@ -1,5 +1,6 @@
 "use client";
 import {
+  LogoMarquee,
   NaveBar,
   PanelSlide,
   ScrollPopUpComponent,
@@ -15,6 +16,17 @@ const slides = [
   "/assets/slide6.webp",
   "/assets/slide7.webp",
   "/assets/slide8.jpg",
+];
+
+const logos = [
+  "/assets/logo-openai.svg",
+  "/assets/logo-hubspot.svg",
+  "/assets/logo-figma.svg",
+  "/assets/logo-plaid.svg",
+  "/assets/logo-binance.svg",
+  "/assets/logo-atlassian.svg",
+  "/assets/logo-meta.webp",
+  "/assets/logo-reforge.webp",
 ];
 export default function Home() {
   const mouseX = useMotionValue(0);
@@ -35,10 +47,9 @@ export default function Home() {
 function HomeLayout() {
   return (
     <div className="my-24 w-full h-full flex flex-col items-center px-[30px]">
-      <div className=""></div>
       <PanelSlide slideImgs={slides} uiToolbar="/assets/ui-toolbar.png" />
       <div className="h-64 w-full mt-[300px] flex flex-col items-center">
-        <ScrollPopUpComponent />
+        <LogoMarquee brands={logos} />
       </div>
     </div>
   );
