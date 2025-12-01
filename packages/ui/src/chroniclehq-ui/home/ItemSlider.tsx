@@ -1,8 +1,7 @@
 "use client";
-import { motion, Variant, Variants } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { HTMLAttributes, ReactNode } from "react";
 import { cn } from "../../cn";
-import { animate } from "motion";
 
 type AnimteToProps = "left" | "right" | "top" | "bottom";
 type ItemSliderProps = {
@@ -52,7 +51,10 @@ export default function ItemSlider({
     >
       <div
         className={cn(
-          "absolute top-0 left-0 w-px h-full bg-black-950 z-10 overhi",
+          "absolute bg-black-950 z-10 top-0 left-0",
+          animateTo === "left" || animateTo === "right"
+            ? "w-px h-full"
+            : "w-full h-px",
           shadowClassName
         )}
       />
@@ -72,7 +74,10 @@ export default function ItemSlider({
       </motion.div>
       <div
         className={cn(
-          "absolute top-0 right-0 w-px h-full bg-black-950 z-10",
+          "absolute bg-black-950 z-10 bottom-0 right-0",
+          animateTo === "left" || animateTo === "right"
+            ? "w-px h-full"
+            : "w-full h-px",
           shadowClassName
         )}
       />
