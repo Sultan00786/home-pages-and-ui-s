@@ -1,10 +1,11 @@
 "use client";
 import {
+  ItemSlider,
   LogoMarquee,
   NaveBar,
   PanelSlide,
   ScrollPopUpComponent,
-  TestimonialSlider,
+  Testimonial,
 } from "@repo/ui/chroniclehq";
 import { useMotionValue } from "motion/react";
 import { MouseEvent } from "react";
@@ -50,7 +51,11 @@ function HomeLayout() {
     <div className="my-24 w-full h-full flex flex-col items-center px-[30px]">
       <PanelSlide slideImgs={slides} uiToolbar="/assets/ui-toolbar.png" />
       <div className="h-[600px] w-full mt-[300px] flex flex-col items-center">
-        <TestimonialSlider />
+        <ItemSlider
+          itemArray={[...Array(6)].map((_, index) => (
+            <Testimonial key={index} index={index} />
+          ))}
+        />
       </div>
     </div>
   );
