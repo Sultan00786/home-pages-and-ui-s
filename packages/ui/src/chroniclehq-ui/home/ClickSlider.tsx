@@ -54,10 +54,9 @@ function ClickSlider({ templates }: ClickSliderProps) {
       <div className="w-full">
         <motion.div className="flex items-center justify-center gap-4">
           <motion.img
-            style={{
-              scale: 0.95,
-            }}
-            transition={{ duration: 10, ease: "easeInOut" }}
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 0.92 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="aspect-video object-cover h-[500px] rounded-lg border border-black-900/60"
             src={templates[activeIndex.ultraPrev]?.imageUrl}
             alt="template"
@@ -65,10 +64,9 @@ function ClickSlider({ templates }: ClickSliderProps) {
             key={activeIndex.ultraPrev}
           />
           <motion.img
-            style={{
-              scale: 0.95,
-            }}
-            transition={{ duration: 10, ease: "easeInOut" }}
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 0.92 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="aspect-video object-cover h-[500px] rounded-lg border border-black-900/60"
             src={templates[activeIndex.prevIndex]?.imageUrl}
             alt="template"
@@ -76,8 +74,9 @@ function ClickSlider({ templates }: ClickSliderProps) {
             key={activeIndex.prevIndex}
           />
           <motion.img
-            initial={{ scale: 0.95 }}
-            transition={{ duration: 10, ease: "easeInOut" }}
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="aspect-video object-cover h-[500px] rounded-lg border border-black-900/60"
             src={templates[activeIndex.currIndex]?.imageUrl}
             alt="template"
@@ -85,10 +84,9 @@ function ClickSlider({ templates }: ClickSliderProps) {
             key={activeIndex.currIndex}
           />
           <motion.img
-            style={{
-              scale: 0.95,
-            }}
-            transition={{ duration: 10, ease: "easeInOut" }}
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 0.92 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="aspect-video object-cover h-[500px] rounded-lg border border-black-900/60"
             src={templates[activeIndex.nextIndex]?.imageUrl}
             alt="template"
@@ -96,10 +94,9 @@ function ClickSlider({ templates }: ClickSliderProps) {
             key={activeIndex.nextIndex}
           />
           <motion.img
-            style={{
-              scale: 0.95,
-            }}
-            transition={{ duration: 10, ease: "easeInOut" }}
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 0.92 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="aspect-video object-cover h-[500px] rounded-lg border border-black-900/60"
             src={templates[activeIndex.ultraNext]?.imageUrl}
             alt="template"
@@ -108,7 +105,7 @@ function ClickSlider({ templates }: ClickSliderProps) {
           />
         </motion.div>
       </div>
-      <div className="sm:w-[700px] flex items-center justify-between">
+      <div className="md:w-[700px] flex items-center justify-between">
         <div>
           <h1 className="roobert-20 font-semibold">
             {`0${activeIndex.currIndex + 1}. ${templates[activeIndex.currIndex]?.heading}`}
@@ -163,7 +160,7 @@ function ImageComponent({ src, id, currId }: ImageComponentProps) {
   return (
     <motion.img
       style={{
-        scale: 0.95,
+        scale: 0.92,
       }}
       animate={
         currId === id && {
