@@ -1,9 +1,20 @@
 "use client";
-import { MouseEventHandler, ReactNode, useState } from "react";
+import {
+  DOMAttributes,
+  HTMLAttributes,
+  MouseEventHandler,
+  ReactNode,
+  useState,
+} from "react";
 import { cn } from "../cn";
 import { motion, Variants } from "motion/react";
 import "../styles.css";
 
+type IconButtonProps<T> = {
+  children: ReactNode;
+  className?: HTMLAttributes<T>["className"];
+  onClick?: DOMAttributes<HTMLButtonElement>["onClick"];
+};
 export function HomeButton({
   children,
   variant = "primary",
@@ -84,5 +95,23 @@ export function HomeButton({
         {children}
       </motion.div>
     </motion.button>
+  );
+}
+
+export function IconButton<T>({
+  children,
+  className,
+  onClick,
+}: IconButtonProps<T>) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "p-1 bg-black-200/20 border border-black-900/80 hover:bg-black-200/10 duration-200 cursor-pointer",
+        className
+      )}
+    >
+      {children}
+    </button>
   );
 }
